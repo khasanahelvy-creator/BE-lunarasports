@@ -61,10 +61,8 @@ class BookingController extends Controller
             ], 409);
         }
 
-        // ================================================================
         // [SECURITY PATCH] TUGAS 1: Hitung semua harga di sisi SERVER.
         // Jangan pernah percaya nilai subtotal / admin_fee dari Frontend.
-        // ================================================================
 
         // 3a. Ambil data Court dari DB untuk mendapatkan harga ASLI
         $court = Court::findOrFail($request->court_id);
@@ -332,15 +330,7 @@ class BookingController extends Controller
         ]);
     }
 
-    /**
-     * [TUGAS 2] SYNC STATUS PEMBAYARAN MANUAL
-     *
-     * Endpoint ini dipanggil oleh user dari ProfilePage jika status masih
-     * "pending" padahal mereka sudah bayar. Fungsi ini melakukan HTTP GET
-     * ke Midtrans API untuk mengecek status riil transaksi.
-     *
-     * POST /api/bookings/{id}/sync-status   (Protected: auth:sanctum)
-     */
+    //Pembayaran manual
     public function syncPaymentStatus(Request $request, $id)
     {
         $booking = Booking::find($id);
