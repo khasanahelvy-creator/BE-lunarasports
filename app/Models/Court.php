@@ -12,6 +12,7 @@ class Court extends Model
         'venue_id', 'name', 'harga', 'image'
     ];
 
+    // Relasi ke Venue induk lapangan ini
     public function venue()
     {
         return $this->belongsTo(Venue::class);
