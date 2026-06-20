@@ -119,10 +119,8 @@ class OrderController extends Controller
         }
     }
 
-    /**
-     * Callback dari Midtrans setelah pembayaran pesanan kantin.
-     * Validasi signature SHA512, update status, dan kurangi stok produk.
-     */
+    //  Callback dari Midtrans setelah pembayaran pesanan kantin.
+    //  Validasi signature SHA512, update status, dan kurangi stok produk.     
     public function callback(Request $request)
     {
         try {
