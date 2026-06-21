@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Hash;
 
 class SuperAdminController extends Controller
 {
-    // =============================================
-    // 1. GLOBAL ANALYTICS
-    // =============================================
+    // Global Analisis
     public function getAnalytics()
     {
         $totalVenues   = Venue::where('status', 'active')->count();
@@ -47,9 +45,7 @@ class SuperAdminController extends Controller
         ]);
     }
 
-    // =============================================
     // 2. MANAJEMEN VENUE (GOR)
-    // =============================================
     public function getVenues()
     {
         $venues = Venue::with('owner')->orderBy('created_at', 'desc')->get();
@@ -151,9 +147,7 @@ class SuperAdminController extends Controller
         return response()->json(['success' => true, 'message' => 'Venue berhasil dihapus.']);
     }
 
-    // =============================================
     // 3. MANAJEMEN USER
-    // =============================================
     public function getUsers(Request $request)
     {
         $query = User::where('role', 'user')->orderBy('created_at', 'desc');
