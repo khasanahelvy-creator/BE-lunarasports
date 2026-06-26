@@ -10,6 +10,7 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+feat/api-setup-and-config
         'name', 
         'category', 
         'brand', 
@@ -18,4 +19,23 @@ class Product extends Model
         'sold', 
         'image'
     ];
+        'venue_id',
+        'name',
+        'category',
+        'price',
+        'stock',
+        'image',
+        'is_rental',
+    ];
+
+    protected $casts = [
+        'is_rental' => 'boolean',
+    ];
+
+    // Relasi ke Venue pemilik produk ini
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class);
+    }
+ main
 }
