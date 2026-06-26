@@ -10,6 +10,15 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+feat/api-setup-and-config
+        'name', 
+        'category', 
+        'brand', 
+        'price', 
+        'rating', 
+        'sold', 
+        'image'
+    ];
         'venue_id',
         'name',
         'category',
@@ -28,4 +37,5 @@ class Product extends Model
     {
         return $this->belongsTo(Venue::class);
     }
+ main
 }
